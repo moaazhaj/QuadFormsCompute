@@ -9,11 +9,17 @@ ExampleParameters <- list(
     hr      = c(1,   1),
     delta2  = c(1.0, 7),
     q = seq(30, 40, length.out=50)
+  ),
+  list(
+    lambda  = c(0.6, 0.3,0.1),
+    hr      = c(1,  1 ,1),
+    delta2  = c(0, 0, 0),
+    q = seq(15, 17, length.out=50)
   )
 )
 
 ## Choose an example number
-exNumber <- 1
+exNumber <- 2
 
 # Retrieve the chosen parameter set
 params  <- ExampleParameters[[exNumber]]
