@@ -39,6 +39,38 @@ ccdf_farebrother <- sapply(q_vals, function(q)
 ccdf_liu <- sapply(q_vals, function(q) liu(q, lambda, h = hr, delta = delta2))
 
 
+###############################################################################
+# Plotting code for the CCDF methods
+###############################################################################
+  
+plot(q_vals, ccdf_imhof, type = "o", 
+     ylim = c(1e-8,1e-4), 
+     #xlim = c(0,120), 
+     xlab = "q", 
+     ylab = "CCDF", 
+     lwd = 2, 
+     col = "black",
+     log = "y",
+     main = paste("Comparison of CCDF  - Examples from Imhof", exNumber))
 
+lines(q_vals, ccdf_davies,       col = "red",   lwd = 2, lty = 2)
+lines(q_vals, ccdf_spa,          col = "blue",  lwd = 1, lty = 3,pch = 20, type = "o")
+lines(q_vals, ccdf_farebrother,  col = "green", lwd = 3, lty = 4)
+lines(q_vals, ccdf_liu,          col = "purple",lwd = 2, lty = 5)
+# Add grid for better visualization on log scale
+grid(nx = NULL, ny = NULL, col = "gray", lty = "dotted")
+
+# # Only plot Zhang, LPB, WF if they are not NA
+# if(!all(is.na(ccdf_zhang))) {
+#   lines(q_vals, ccdf_zhang,  col = "orange", lwd = 2, lty = 6)
+# }
+
+legend("topleft", 
+       legend = c("Imhof", "Davies", "Saddlepoint", "Farebrother",
+                  "Liu"),
+       col = c("black", "red", "blue", "green", 
+               "purple" ),
+       lty = c(1,2,3,4,5),
+       bty = "n", cex = 0.8)
 
 
