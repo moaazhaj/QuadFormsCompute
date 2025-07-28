@@ -5,3 +5,6 @@ A quadratic form in gaussian random variables is a function $Q$ of the form $Q =
 There are many software libraries and packages to compute these $F_Q$ and $f_Q$. In [`R-Language`](https://www.r-project.org/) there are packages such as: [`CompQuadFrom`](https://cran.r-project.org/web/packages/CompQuadForm/index.html), [bigQF](https://cran.r-project.org/web/packages/bigQF/index.html) and others. 
 
 In this repository we compare the performance of these computational methods. We also aim to investigate where these packages do not work. 
+
+
+![](./Imhof_failure1.png)
